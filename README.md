@@ -2,7 +2,7 @@
 Estimate router global address
 
 # Description
-rs estimates the global address of a router on the network.
+Rs sends a Router Solicitaion packet(s) and estimates the global address of the router based on the Router Advertisement packet it first received.
 
 # Format
 rs &lt;interface>
