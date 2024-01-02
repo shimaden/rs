@@ -14,6 +14,8 @@
 #include <netinet/ip6.h>
 #include <netinet/icmp6.h>
 
+#include <string>
+
 #include "setup_socket.h"
 #include "iface.h"
 #include "nd_router.h"
@@ -418,6 +420,7 @@ int main(int argc, char *argv[])
     ether_addr         *router_mac_addr = 0;
     nd_opt_prefix_info *prefix_info = 0;
     nd_opt_mtu         *mtu = 0;
+
     bool result = get_my_ip6_addr(
                         fd,
                         recvbuf,

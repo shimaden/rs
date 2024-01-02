@@ -38,7 +38,7 @@ static int get_iface_index(int sock_fd, const char *device)
         close(sock_fd);
         return -1;
     }
-    return sock_fd;
+    return if_request.ifr_ifindex;
 }
 
 static bool flush_recv_buf(int sock_fd)
