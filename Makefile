@@ -1,3 +1,6 @@
+CPP = gcc
+CXX = g++
+
 EXEC = rs
 OBJS = rs.o setup_socket.o iface.o nd_router.o checksum.o eui64.o \
 		compose_ip6_hdr.o compose_icmp6_hdr.o
@@ -6,13 +9,13 @@ TEST_EXEC = nd_router iface
 all: $(EXEC)
 
 rs: $(OBJS)
-	g++ -std=c++11 -o $(EXEC) $(OBJS) -pthread
+	$(CXX) -std=c++11 -o $(EXEC) $(OBJS) -pthread
 
 .cpp.o:
-	g++ -Wall -g -O2 -c $<
+	$(CXX) $(CXXFLAGS) -Wall -g -O2 -c $<
 
 .c.o:
-	gcc -Wall -g -O2 -c $<
+	$(CPP) $(CFLAGS) -Wall -g -O2 -c $<
 
 rs.o: rs.cpp setup_socket.h iface.h nd_router.h eui64.h checksum.h
 setup_socket.o: setup_socket.cpp setup_socket.h
