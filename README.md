@@ -1,8 +1,8 @@
 # rs
-Estimate router global address
+Show IPv6 router global address
 
 # Description
-Rs estimates the global unicast address of a router from a Router Advertisement that it sent. The first Router Advertisement after the program was executed and whose source address is a link-local unicast address is used. Although rs begins to send Router Solicitations at regular intervals right after execution, the first Router Advertisement is used whether or not it was triggered by a Router Solicitation form the program.
+Rs sends an RS (Router Solicitation) to the interface specified in the command line to find a router on the IPv6 network that the interface belongs to. Rs shows the link-local address and the global address of the router based on the information of the RA that rs first receives.
 
 # Synopsis
 rs &lt;interface>
